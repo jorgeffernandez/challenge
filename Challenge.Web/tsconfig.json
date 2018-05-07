@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "target": "es5",
+    "jsx": "react",
+    "sourceMap": true,
+    "skipDefaultLibCheck": true,
+    "experimentalDecorators": true,
+
+    "types": [
+      "webpack-env",
+      "aspnet-webpack-react"
+    ]
+  },
+  "exclude": [
+      "bin",
+      "node_modules"
+  ]
+}

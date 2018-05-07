@@ -1,0 +1,195 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net471</TargetFramework>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore" Version="2.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices" Version="2.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.0.2" />
+    <PackageReference Include="SonarAnalyzer.CSharp" Version="6.8.2.4717" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Files not to publish (note that the 'dist' subfolders are re-added below) -->
+    <Compile Remove="ClientApp\components\appointment\**" />
+    <Compile Remove="ClientApp\components\calendar\**" />
+    <Compile Remove="ClientApp\components\common\inputDateFilter\**" />
+    <Compile Remove="ClientApp\components\common\inputDate\**" />
+    <Compile Remove="ClientApp\components\errorTokenInfo\load\**" />
+    <Content Remove="ClientApp\**" />
+    <EmbeddedResource Remove="ClientApp\components\appointment\**" />
+    <EmbeddedResource Remove="ClientApp\components\calendar\**" />
+    <EmbeddedResource Remove="ClientApp\components\common\inputDateFilter\**" />
+    <EmbeddedResource Remove="ClientApp\components\common\inputDate\**" />
+    <EmbeddedResource Remove="ClientApp\components\errorTokenInfo\load\**" />
+    <None Remove="ClientApp\components\appointment\**" />
+    <None Remove="ClientApp\components\calendar\**" />
+    <None Remove="ClientApp\components\common\inputDateFilter\**" />
+    <None Remove="ClientApp\components\common\inputDate\**" />
+    <None Remove="ClientApp\components\errorTokenInfo\load\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ClientApp\api\catalog.ts" />
+    <None Remove="ClientApp\api\index.ts" />
+    <None Remove="ClientApp\api\rest.ts" />
+    <None Remove="ClientApp\api\validateToken\index.ts" />
+    <None Remove="ClientApp\common\actions\clearState.ts" />
+    <None Remove="ClientApp\common\constants\actionTypes.ts" />
+    <None Remove="ClientApp\common\constants\api.ts" />
+    <None Remove="ClientApp\common\constants\toastrMessages.ts" />
+    <None Remove="ClientApp\common\enum\clearStateEnum.ts" />
+    <None Remove="ClientApp\common\enum\index.ts" />
+    <None Remove="ClientApp\common\enum\modalStepsEnum.ts" />
+    <None Remove="ClientApp\common\enum\toastrPosition.ts" />
+    <None Remove="ClientApp\common\enum\toastrType.ts" />
+    <None Remove="ClientApp\common\enum\tokenEnum.ts" />
+    <None Remove="ClientApp\components\catalog\actions\loadCatalogAction.ts" />
+    <None Remove="ClientApp\components\catalog\actions\showDetailsAction.ts" />
+    <None Remove="ClientApp\components\catalog\catalog.tsx" />
+    <None Remove="ClientApp\components\catalog\catalogContainer.tsx" />
+    <None Remove="ClientApp\components\catalog\mobile.tsx" />
+    <None Remove="ClientApp\components\catalog\mobileDetail.tsx" />
+    <None Remove="ClientApp\common\toastr.ts" />
+    <None Remove="ClientApp\components\errorTokenInfo\errorTokenInfo.tsx" />
+    <None Remove="ClientApp\components\errorTokenInfo\errorTokenInfoContainer.tsx" />
+    <None Remove="ClientApp\components\loading\loading.tsx" />
+    <None Remove="ClientApp\components\loading\loadingContainer.tsx" />
+    <None Remove="ClientApp\components\modal\modal.tsx" />
+    <None Remove="ClientApp\components\modal\modalContainer.tsx" />
+    <None Remove="ClientApp\components\modalSpinner\ModalSpinner.tsx" />
+    <None Remove="ClientApp\components\modal\toggleModalAction.ts" />
+    <None Remove="ClientApp\components\common\spinner\spinner.tsx" />
+    <None Remove="ClientApp\middlewares\http\actions.ts" />
+    <None Remove="ClientApp\middlewares\http\middleware.ts" />
+    <None Remove="ClientApp\middlewares\index.ts" />
+    <None Remove="ClientApp\model\catalog.ts" />
+    <None Remove="ClientApp\model\config.ts" />
+    <None Remove="ClientApp\model\errorContent.ts" />
+    <None Remove="ClientApp\model\errorToken.ts" />
+    <None Remove="ClientApp\model\httpState.ts" />
+    <None Remove="ClientApp\model\index.ts" />
+    <None Remove="ClientApp\model\mobileEntity.ts" />
+    <None Remove="ClientApp\model\modal.ts" />
+    <None Remove="ClientApp\model\restResponse.ts" />
+    <None Remove="ClientApp\model\tokenResult.ts" />
+    <None Remove="ClientApp\model\httpState.ts" />
+    <None Remove="ClientApp\model\index.ts" />
+    <None Remove="ClientApp\model\restResponse.ts" />
+    <None Remove="ClientApp\model\tokenResult.ts" />
+    <None Remove="ClientApp\package.tsx" />
+    <None Remove="ClientApp\reducers\calendarRow.ts" />
+    <None Remove="ClientApp\reducers\catalog.ts" />
+    <None Remove="ClientApp\reducers\errorToken.ts" />
+    <None Remove="ClientApp\reducers\http.ts" />
+    <None Remove="ClientApp\reducers\index.ts" />
+    <None Remove="ClientApp\reducers\modal.ts" />
+    <None Remove="ClientApp\reducers\token.ts" />
+    <None Remove="ClientApp\reducers\tokenResult.ts" />
+    <None Remove="ClientApp\store.tsx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Challenge.Shared.Models\Challenge.Shared.Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\api\catalog.ts" />
+    <TypeScriptCompile Include="ClientApp\api\index.ts" />
+    <TypeScriptCompile Include="ClientApp\api\rest.ts" />
+    <TypeScriptCompile Include="ClientApp\api\validateToken\index.ts" />
+    <TypeScriptCompile Include="ClientApp\common\actions\clearState.ts" />
+    <TypeScriptCompile Include="ClientApp\common\constants\actionTypes.ts" />
+    <TypeScriptCompile Include="ClientApp\common\constants\api.ts" />
+    <TypeScriptCompile Include="ClientApp\common\constants\toastrMessages.ts" />
+    <TypeScriptCompile Include="ClientApp\common\enum\clearStateEnum.ts" />
+    <TypeScriptCompile Include="ClientApp\common\enum\index.ts" />
+    <TypeScriptCompile Include="ClientApp\common\enum\modalStepsEnum.ts" />
+    <TypeScriptCompile Include="ClientApp\common\enum\toastrPosition.ts" />
+    <TypeScriptCompile Include="ClientApp\common\enum\toastrType.ts" />
+    <TypeScriptCompile Include="ClientApp\common\enum\tokenEnum.ts" />
+    <TypeScriptCompile Include="ClientApp\components\catalog\actions\loadCatalogAction.ts" />
+    <TypeScriptCompile Include="ClientApp\components\catalog\actions\showDetailsAction.ts" />
+    <TypeScriptCompile Include="ClientApp\components\catalog\catalog.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\catalog\catalogContainer.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\catalog\mobile.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\catalog\mobileDetail.tsx" />
+    <TypeScriptCompile Include="ClientApp\common\toastr.ts" />
+    <TypeScriptCompile Include="ClientApp\components\errorTokenInfo\errorTokenInfo.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\errorTokenInfo\errorTokenInfoContainer.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\loading\loading.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\loading\loadingContainer.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\modal\modal.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\modal\modalContainer.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\modalSpinner\ModalSpinner.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\modal\actions\modal.ts" />
+    <TypeScriptCompile Include="ClientApp\components\common\spinner\spinner.tsx" />
+    <TypeScriptCompile Include="ClientApp\middlewares\http\actions.ts" />
+    <TypeScriptCompile Include="ClientApp\middlewares\http\middleware.ts" />
+    <TypeScriptCompile Include="ClientApp\middlewares\index.ts" />
+    <TypeScriptCompile Include="ClientApp\model\catalog.ts" />
+    <TypeScriptCompile Include="ClientApp\model\mobileEntity.ts" />
+    <TypeScriptCompile Include="ClientApp\model\modal.ts" />
+    <TypeScriptCompile Include="ClientApp\model\config.ts" />
+    <TypeScriptCompile Include="ClientApp\model\errorContent.ts" />
+    <TypeScriptCompile Include="ClientApp\model\errorToken.ts" />
+    <TypeScriptCompile Include="ClientApp\model\httpState.ts" />
+    <TypeScriptCompile Include="ClientApp\model\index.ts" />
+    <TypeScriptCompile Include="ClientApp\model\httpState.ts" />
+    <TypeScriptCompile Include="ClientApp\model\index.ts" />
+    <TypeScriptCompile Include="ClientApp\model\restResponse.ts" />
+    <TypeScriptCompile Include="ClientApp\model\tokenResult.ts" />
+    <TypeScriptCompile Include="ClientApp\package.tsx" />
+    <TypeScriptCompile Include="ClientApp\reducers\catalog.ts" />
+    <TypeScriptCompile Include="ClientApp\reducers\errorToken.ts" />
+    <TypeScriptCompile Include="ClientApp\reducers\http.ts" />
+    <TypeScriptCompile Include="ClientApp\reducers\index.ts" />
+    <TypeScriptCompile Include="ClientApp\reducers\modal.ts" />
+    <TypeScriptCompile Include="ClientApp\reducers\token.ts" />
+    <TypeScriptCompile Include="ClientApp\reducers\tokenResult.ts" />
+    <TypeScriptCompile Include="ClientApp\store.tsx" />
+  </ItemGroup>
+
+  <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
+    <!-- Ensure Node.js is installed -->
+    <Exec Command="node --version" ContinueOnError="true">
+      <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
+    </Exec>
+    <Error Condition="'$(ErrorCode)' != '0'" Text="Node.js is required to build and run this project. To continue, please install Node.js from https://nodejs.org/, and then restart your command prompt or IDE." />
+
+    <!-- In development, the dist files won't exist on the first run or when cloning to
+         a different machine, so rebuild them if not already present. -->
+    <Message Importance="high" Text="Performing first-run Webpack build..." />
+    <Exec Command="node node_modules/webpack/bin/webpack.js --config webpack.config.vendor.js" />
+    <Exec Command="node node_modules/webpack/bin/webpack.js" />
+  </Target>
+
+  <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
+    <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
+    <Exec Command="npm install" />
+    <Exec Command="node node_modules/webpack/bin/webpack.js --config webpack.config.vendor.js --env.prod" />
+    <Exec Command="node node_modules/webpack/bin/webpack.js --env.prod" />
+
+    <!-- Include the newly-built files in the publish output -->
+    <ItemGroup>
+      <DistFiles Include="wwwroot\dist\**; ClientApp\dist\**" />
+      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
+        <RelativePath>%(DistFiles.Identity)</RelativePath>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </ResolvedFileToPublish>
+    </ItemGroup>
+  </Target>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JSONSchema="" /></VisualStudio></ProjectExtensions>
+
+</Project>

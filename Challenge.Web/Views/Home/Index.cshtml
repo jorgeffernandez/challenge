@@ -1,0 +1,27 @@
+@{
+    ViewData["Title"] = "Challenge - Test";
+}
+
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+
+<div id="react-app">Loading...</div>
+
+<div id="settings" data-url="@Configuration.GetSection("Settings:UrlAPI").Value" data-token="@Configuration.GetSection("Settings:Token").Value"></div>
+
+@section scripts {
+    <script src="~/dist/main.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+        function returnJson(json) {
+            console.log(json);
+        }
+        var config=  {
+          token: '@Configuration.GetSection("Settings:Token").Value',
+          idHtml: 'react-app'
+        };
+
+        console.log(config.token);
+
+        MM.default.Challenge.init(config, returnJson);
+    </script>
+}

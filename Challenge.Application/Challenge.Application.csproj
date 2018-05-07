@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1C784738-35DC-4F4D-BCDA-7E82E58089E3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Challenge.Application</RootNamespace>
+    <AssemblyName>Challenge.Application</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationAuthorization\ApplicationAuthorization.cs" />
+    <Compile Include="ApplicationAuthorization\IApplicationAuthorization.cs" />
+    <Compile Include="ApplicationPhones\ApplicationPhone.cs" />
+    <Compile Include="ApplicationPhones\IApplicationPhone.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Challenge.ApplicationEntities\Challenge.ApplicationEntities.csproj">
+      <Project>{29D1666E-1532-48FA-81EF-25A695208962}</Project>
+      <Name>Challenge.ApplicationEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Challenge.Domain.Core\Challenge.Domain.Core.csproj">
+      <Project>{c84e61e9-697d-442a-b099-2209fd22c576}</Project>
+      <Name>Challenge.Domain.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Challenge.Domain\Challenge.Domain.csproj">
+      <Project>{082B65BA-8485-4B5E-A3A8-B976F6D7401B}</Project>
+      <Name>Challenge.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Challenge.Domain.Entities\Challenge.Domain.Entities.csproj">
+      <Project>{fe88a34f-af7b-4241-89fa-ed3d99697a28}</Project>
+      <Name>Challenge.Domain.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
